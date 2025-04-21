@@ -21,5 +21,6 @@ This is a simple Task Manager application built using the MERN stack (MongoDB, E
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/mern-task-manager.git
+[git clone https://github.com/yourusername/mern-task-manager.git
 cd mern-task-manager
+](https://github.com/vikas8561/Task-Management-Syatem/tree/main)
