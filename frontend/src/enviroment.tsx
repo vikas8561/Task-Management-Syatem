@@ -1,1 +1,1 @@
-export const BACKEND_URI = "http://localhost:8000/api/v1"
+export const BACKEND_URI = "https://task-management-syatem.onrender.com/api/v1"
