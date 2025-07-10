@@ -54,6 +54,39 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Auth pages styling */
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 0;
+}
+
+.auth-container .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 40px);
+}
+
+.auth-container .form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.auth-container .btn-dark {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+.auth-container .btn-dark:hover {
+  background-color: #5a6fd8;
+  border-color: #5a6fd8;
+}
+
+.auth-container .shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

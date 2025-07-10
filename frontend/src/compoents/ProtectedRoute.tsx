@@ -1,40 +1,32 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/Auth.context'
 
 const ProtectedRoute = ({children}:{children:ReactNode}) => {
-    const router = useNavigate()
-    const [loading,setLoading] = useState(true)
-    const {user,profileUser} = useAuth()
+    const navigate = useNavigate()
+    const { user, isLoading } = useAuth()
 
-    useEffect(()=>{
-            const token = localStorage.getItem("token") || ''
-            if(token){
-                        // set user api call
-                        (async()=>{
-                            await profileUser(token )
-                        })()
-                setLoading(false)
-            }
-            else{
-                router("/auth/login")
-            }
-
-
-
-
-    },[])
-
-        if(loading){
-            return <div>loading...</div>
+    useEffect(() => {
+        if (!isLoading && !user.email) {
+            navigate("/auth/login")
         }
+    }, [user, isLoading, navigate])
 
-  return (
-    <>
- 
-          {children}
-    </>
-  )
+    if (isLoading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '60vh' }}>
+                <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        )
+    }
+
+    if (!user.email) {
+        return null
+    }
+
+    return <>{children}</>
 }
 
 export default ProtectedRoute

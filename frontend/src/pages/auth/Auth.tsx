@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 const Auth = () => {
-
-
-
-
-
   return (
-    <>
-          <Outlet/>
-    </>
+    <div className="auth-container">
+      <Outlet />
+    </div>
   )
 }
 
-export default Auth
+export default Auth 
