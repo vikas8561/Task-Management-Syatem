@@ -1,4 +1,3 @@
-import React from 'react'
 import { MdOutlineDone } from 'react-icons/md';
 import { RxCross2 } from "react-icons/rx";
 import { Task, useTask } from '../../../context/Task.context';
